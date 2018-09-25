@@ -1,5 +1,4 @@
-
-# tcpdp
+# puppet-tcpdp [![Build Status](https://travis-ci.org/hfm/puppet-tcpdp.svg?branch=master)](https://travis-ci.org/hfm/puppet-tcpdp) [![Puppet Forge](https://img.shields.io/puppetforge/v/hfm/tcpdp.svg?style=flat-square)](https://forge.puppetlabs.com/hfm/tcpdp)
 
 Welcome to your new module. A short overview of the generated parts can be found in the PDK documentation at https://puppet.com/pdk/latest/pdk_generating_modules.html .
 
