@@ -1,15 +1,5 @@
 # puppet-tcpdp [![Build Status](https://travis-ci.org/hfm/puppet-tcpdp.svg?branch=master)](https://travis-ci.org/hfm/puppet-tcpdp) [![Puppet Forge](https://img.shields.io/puppetforge/v/hfm/tcpdp.svg?style=flat-square)](https://forge.puppetlabs.com/hfm/tcpdp)
 
-Welcome to your new module. A short overview of the generated parts can be found in the PDK documentation at https://puppet.com/pdk/latest/pdk_generating_modules.html .
-
-The README template below provides a starting point with details about what information to include in your README.
-
-
-
-
-
-
-
 #### Table of Contents
 
 1. [Description](#description)
@@ -23,10 +13,7 @@ The README template below provides a starting point with details about what info
 
 ## Description
 
-Briefly tell users why they might want to use your module. Explain what your module does and what kind of problems users can solve with it.
-
-This should be a fairly short description helps the user decide if your module is what they want.
-
+[tcpdp](https://github.com/k1LoW/tcpdp/) is TCP custom dump tool written by [@k1LoW](https://github.com/k1LoW). puppet-tcpdp handles installation, configuration, and service for tcpdp.
 
 ## Setup
 
