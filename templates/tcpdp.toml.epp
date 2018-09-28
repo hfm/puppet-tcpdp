@@ -1,0 +1,30 @@
+[tcpdp]
+pidfile = "<%= $tcpdp::pidfile %>"
+dumper = "<%= $tcpdp::dumper %>"
+
+[probe]
+target = "<%= $tcpdp::target %>"
+interface = "<%= $tcpdp::interface %>"
+
+[proxy]
+useServerSterter = <%= $tcpdp::use_server_starter %>
+listenAddr = "<%= $tcpdp::listen_addr %>"
+remoteAddr = "<%= $tcpdp::remote_addr %>"
+
+[log]
+dir = "<%= $tcpdp::log_dir %>"
+enable = <%= $tcpdp::log_enable %>
+stdout = <%= $tcpdp::log_stdout %>
+format = "<%= $tcpdp::log_format %>"
+rotateEnable = <%= $tcpdp::log_rotate_enable %>
+rotationTime = "<%= $tcpdp::log_rotation_time %>"
+rotationCount = <%= $tcpdp::log_rotation_count %>
+
+[dumpLog]
+dir = "<%= $tcpdp::dumplog_dir %>"
+enable = <%= $tcpdp::dumplog_enable %>
+stdout = <%= $tcpdp::dumplog_stdout %>
+format = "<%= $tcpdp::dumplog_format %>"
+rotateEnable = <%= $tcpdp::dumplog_rotate_enable %>
+rotationTime = "<%= $tcpdp::dumplog_rotation_time %>"
+rotationCount = <%= $tcpdp::dumplog_rotation_count %>

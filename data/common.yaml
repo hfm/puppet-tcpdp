@@ -3,3 +3,25 @@ tcpdp::install_dir: '/opt/tcpdp'
 tcpdp::bin_dir: '/usr/local/bin'
 tcpdp::version: '0.9.1'
 tcpdp::download_url_base: "https://github.com/k1LoW/tcpdp/releases/download/v%{lookup('tcpdp::version')}/tcpdp_v%{lookup('tcpdp::version')}"
+
+tcpdp::pidfile: './tcpdp.pid'
+tcpdp::dumper: 'hex'
+tcpdp::target: 'localhost:80'
+tcpdp::interface: ''
+tcpdp::use_server_starter: false
+tcpdp::listen_addr: 'localhost:8080'
+tcpdp::remote_addr:  'localhost:80'
+tcpdp::log_dir: '.'
+tcpdp::log_enable: true
+tcpdp::log_stdout: true
+tcpdp::log_format: 'json'
+tcpdp::log_rotate_enable: true
+tcpdp::log_rotation_time: 'daily'
+tcpdp::log_rotation_count: 7
+tcpdp::dumplog_dir: '.'
+tcpdp::dumplog_enable: true
+tcpdp::dumplog_stdout: false
+tcpdp::dumplog_format: 'json'
+tcpdp::dumplog_rotate_enable: true
+tcpdp::dumplog_rotation_time: 'daily'
+tcpdp::dumplog_rotation_count: 7
