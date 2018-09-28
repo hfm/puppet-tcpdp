@@ -34,4 +34,10 @@ describe 'tcpdp class' do
     it { is_expected.to be_symlink }
     its(:link_target) { is_expected.to eq '/opt/tcpdp/tcpdp-0.9.1/tcpdp' }
   end
+
+  describe file('/etc/tcpdp.toml') do
+    it { is_expected.to be_file }
+    it { is_expected.to be_owned_by 'root' }
+    it { is_expected.to be_grouped_into 'root' }
+  end
 end
