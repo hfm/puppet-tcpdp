@@ -30,7 +30,7 @@ class tcpdp::install {
 
       $_url = $facts['os']['family'] ? {
         'RedHat' => "${_url_pre}.el${facts['os']['release']['major']}.${_ext}",
-        'Debian' => "${_url_pre}.${facts['os']['distro']['codename']}.${_ext}",
+        'Debian' => "${_url_pre}.${facts['lsbdistcodename']}.${_ext}",
       }
     }
     default: {
