@@ -60,10 +60,10 @@ class tcpdp::install {
       require => Archive['tcpdp'];
 
     "${_path}/tcpdp":
-      ensure  => file,
-      owner   => 'root',
-      group   => 'root',
-      mode    => '0700';
+      ensure => file,
+      owner  => 'root',
+      group  => 'root',
+      mode   => '0700';
 
     "${tcpdp::bin_dir}/tcpdp":
       ensure => link,
