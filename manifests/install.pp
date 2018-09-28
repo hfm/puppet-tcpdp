@@ -20,14 +20,14 @@ class tcpdp::install {
       $_url = "${tcpdp::download_url_base}_darwin_amd64.zip"
     }
     'Linux': {
-      $_url = $tcpdp::use_static ? {
+      $_url_pre = $tcpdp::use_static ? {
         true  => "${tcpdp::download_url_base}_linux_amd64_static",
         false => "${tcpdp::download_url_base}_linux_amd64",
       }
 
       $_url = $facts['os']['family'] ? {
-        'RedHat' => "${_url}.el${facts['os']['release']['major']}.tar.gz",
-        'Debian' => "${_url}.${facts['os']['distro']['codename']}.tar.gz",
+        'RedHat' => "${_url_pre}.el${facts['os']['release']['major']}.tar.gz",
+        'Debian' => "${_url_pre}.${facts['os']['distro']['codename']}.tar.gz",
       }
     }
     default: {
