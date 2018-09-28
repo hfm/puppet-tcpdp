@@ -17,11 +17,11 @@ class tcpdp::install {
   # * https://github.com/k1LoW/tcpdp/releases/download/v0.9.1/tcpdp_v0.9.1_linux_amd64_static.xenial.tar.gz
   case $facts['kernel'] {
     'Darwin': {
-      $_ext = "zip"
+      $_ext = 'zip'
       $_url = "${tcpdp::download_url_base}_darwin_amd64.${_ext}"
     }
     'Linux': {
-      $_ext = "tar.gz"
+      $_ext = 'tar.gz'
 
       $_url_pre = $tcpdp::use_static ? {
         true  => "${tcpdp::download_url_base}_linux_amd64_static",
