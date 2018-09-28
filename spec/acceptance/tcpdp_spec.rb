@@ -32,6 +32,6 @@ describe 'tcpdp class' do
 
   describe file('/usr/local/bin/tcpdp') do
     it { is_expected.to be_symlink }
-    its(:link_target) { is_expected.to be '/opt/tcpdp/tcpdp-0.9.1/tcpdp' }
+    its(:link_target) { is_expected.to eq '/opt/tcpdp/tcpdp-0.9.1/tcpdp' }
   end
 end
