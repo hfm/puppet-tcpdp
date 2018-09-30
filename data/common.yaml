@@ -1,8 +1,7 @@
-tcpdp::use_static: true
 tcpdp::install_dir: '/opt/tcpdp'
 tcpdp::bin_dir: '/usr/local/bin'
-tcpdp::version: '0.9.1'
-tcpdp::download_url_base: "https://github.com/k1LoW/tcpdp/releases/download/v%{lookup('tcpdp::version')}/tcpdp_v%{lookup('tcpdp::version')}"
+tcpdp::version: '0.10.0'
+tcpdp::download_url_base: "https://github.com/k1LoW/tcpdp/releases/download/v%{lookup('tcpdp::version')}"
 
 tcpdp::pidfile: './tcpdp.pid'
 tcpdp::dumper: 'hex'
