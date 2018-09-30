@@ -15,6 +15,10 @@ describe 'tcpdp class' do
     expect(apply_manifest(manifest).exit_code).to be_zero
   end
 
+  describe package('tcpdp') do
+    it { is_expected.to be_installed }
+  end
+
   describe file('/usr/bin/tcpdp') do
     it { is_expected.to be_executable }
   end
