@@ -6,6 +6,13 @@
 #   include tcpdp::install
 class tcpdp::install {
 
+  $_dep = $facts['os']['family'] ? {
+    'RedHat' => 'libpcap',
+    'Debian' => 'libpcap0.8',
+  }
+
+  ensure_packages([$_dep], {'before' => 'Package[tcpdp]'})
+
   # URL Examples:
   # * https://github.com/k1LoW/tcpdp/releases/download/v0.10.0/tcpdp-0.10.0-1.el6.x86_64.rpm
   # * https://github.com/k1LoW/tcpdp/releases/download/v0.10.0/tcpdp_0.10.0-1_amd64.deb
