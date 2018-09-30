@@ -17,7 +17,7 @@ class tcpdp::install {
 
   $_provider = $facts['os']['family'] ? {
     'RedHat' => 'rpm',
-    'Debian' => 'deb',
+    'Debian' => 'dpkg',
   }
 
   package { 'tcpdp':
