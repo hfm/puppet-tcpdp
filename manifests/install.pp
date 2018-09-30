@@ -15,9 +15,15 @@ class tcpdp::install {
     'Debian' => "${tcpdp::download_url_base}/tcpdp_${tcpdp::version}-1_amd64.deb",
   }
 
+  $_provider = $facts['os']['family'] ? {
+    'RedHat' => 'rpm',
+    'Debian' => 'deb',
+  }
+
   package { 'tcpdp':
-    ensure => present,
-    source => $_url,
+    ensure   => present,
+    source   => $_url,
+    provider => $_provider,
   }
 
 }
