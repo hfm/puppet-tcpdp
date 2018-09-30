@@ -5,7 +5,6 @@
 # @example
 #   include tcpdp::install
 class tcpdp (
-  Boolean $use_static,
   String  $install_dir,
   String  $bin_dir,
   String  $version,

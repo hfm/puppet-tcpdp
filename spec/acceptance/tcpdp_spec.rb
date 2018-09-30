@@ -15,24 +15,12 @@ describe 'tcpdp class' do
     expect(apply_manifest(manifest).exit_code).to be_zero
   end
 
-  ['/opt/tcpdp', '/opt/tcpdp/tcpdp-0.9.1'].each do |dir|
-    describe file(dir) do
-      it { is_expected.to be_directory }
-      it { is_expected.to be_owned_by 'root' }
-      it { is_expected.to be_grouped_into 'root' }
-      it { is_expected.to be_mode 555 }
-    end
+  describe package('tcpdp') do
+    it { is_expected.to be_installed }
   end
 
-  describe file('/opt/tcpdp/tcpdp-0.9.1/tcpdp') do
+  describe file('/usr/bin/tcpdp') do
     it { is_expected.to be_executable }
-    it { is_expected.to be_owned_by 'root' }
-    it { is_expected.to be_grouped_into 'root' }
-  end
-
-  describe file('/usr/local/bin/tcpdp') do
-    it { is_expected.to be_symlink }
-    its(:link_target) { is_expected.to eq '/opt/tcpdp/tcpdp-0.9.1/tcpdp' }
   end
 
   describe file('/etc/tcpdp.toml') do
