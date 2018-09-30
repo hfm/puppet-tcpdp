@@ -22,14 +22,29 @@ class tcpdp::install {
     'Debian' => "${tcpdp::download_url_base}/tcpdp_${tcpdp::version}-1_amd64.deb",
   }
 
+  if $facts['os']['family'] == 'Debian' {
+    include ::archive
+    archive { "/usr/local/src/tcpdp_${tcpdp::version}-1_amd64.deb":
+      ensure => present,
+      source => $_url,
+      before => Package['tcpdp'],
+    }
+
+  }
+
   $_provider = $facts['os']['family'] ? {
     'RedHat' => 'rpm',
     'Debian' => 'dpkg',
   }
 
+  $_source = $facts['os']['family'] ? {
+    'RedHat' => $_url,
+    'Debian' => "/usr/local/src/tcpdp_${tcpdp::version}-1_amd64.deb",
+  }
+
   package { 'tcpdp':
     ensure   => present,
-    source   => $_url,
+    source   => $_source,
     provider => $_provider,
   }
 
